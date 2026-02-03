@@ -1,0 +1,7 @@
+next smaller element
+
+top of the stack < array[i]
+
+
+while stack top of the stack >= array[i]:
+    stack.pop()
