@@ -52,3 +52,69 @@ class linkedlist:
         if new_node.next is None:
             self.tail = new_node
     
+    def DeleteAtHead(self):
+
+        if self.head is None:
+            print("List is empty")
+            return
+
+        # If only one node
+        if self.head.next is None:
+            self.head = None
+            self.tail = None
+            return
+
+        # Move head forward
+        self.head = self.head.next
+
+    def DeleteAtTail(self):
+
+        if self.head is None:
+            print("List is empty")
+            return
+
+        # If only one node
+        if self.head.next is None:
+            self.head = None
+            self.tail = None
+            return
+
+        temp = self.head
+
+        # Move to second-last node
+        while temp.next != self.tail:
+            temp = temp.next
+
+        temp.next = None
+        self.tail = temp
+
+    def DeleteAtK(self, K):
+
+        if self.head is None:
+            print("List is empty")
+            return
+
+        # Delete head
+        if K == 0:
+            self.DeleteAtHead()
+            return
+
+        temp = self.head
+        count = 0
+
+        # Move to node at index K-1
+        while temp.next is not None and count < K - 1:
+            temp = temp.next
+            count += 1
+
+        # If K out of range
+        if temp.next is None:
+            print("Index out of range")
+            return
+
+        # If deleting tail
+        if temp.next == self.tail:
+            self.tail = temp
+
+        # Skip the node
+        temp.next = temp.next.next
