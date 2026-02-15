@@ -11,9 +11,9 @@ class linkedlist:
         new_node = node(value)
         if self.head == None:
             self.head = new_node
-            self.tail = new_node
-            return
-        self.tail.next = new_node
+        else:
+            self.tail.next = new_node
+
         self.tail = new_node
 
     def PrintList(self):
