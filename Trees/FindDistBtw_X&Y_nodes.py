@@ -1,7 +1,7 @@
 def path(root : Optional[TreeNode] , x : Optional[TreeNode] , ls : List[int]) -> bool:
     if root == None:
         return False
-    if root == x or path(root.left , x , ls) == True or path(root.right , x , ls) == True :
+    if root.val == x or path(root.left , x , ls) == True or path(root.right , x , ls) == True :
         ls.append(root)
         return True
     return False
