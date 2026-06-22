@@ -1,4 +1,4 @@
-def nextLargerElement(self, arr):
+def LargestRect_in_Histogram(self, arr):
         n = len(arr)
         Next_smaller = [0]*n
         prev_smaller = [0]*n

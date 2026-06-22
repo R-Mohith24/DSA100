@@ -1,6 +1,6 @@
 from NodeClass import Node
 
-def insert(root , data):
+def insert(root , data) -> Node:
     if root is None:
         return Node(data)
     if data < root.data:
