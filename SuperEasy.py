@@ -1,10 +1,14 @@
 class Solution:
-    def limitOccurrences(self, nums: list[int], k: int) -> list[int]:
-        hashmap = {}
-        res = []
-        for i in range(len(nums)):
-            hashmap[nums[i]] = hashmap.get(nums[i] , 0) + 1
-            if hashmap[nums[i]] <= k:
-                res.append(nums[i])
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        mapST , mapTS = {} , {}
 
-        return res
+        for i in range(len(s)):
+            c1 , c2 = s[i] , t[i]
+
+            if (c1 in mapST and mapST[c1] != c2) or (c2 in mapTS and mapTS[c2] != c1):
+                return False
+            
+            mapST[c1] = c2
+            mapTS[c2] = c1
+        
+        return True
